@@ -289,7 +289,7 @@ jobs:
       id: build
       run: |
         cd rdm/src
-        qmake resp.pro CONFIG-=debug "VERSION=${{ env.VERSION }}"
+        qmake resp.pro CONFIG-=debug  DEFINES+=SSH_SUPPORT "VERSION=${{ env.VERSION }}"
         make -s -j 8
 
     - name: copy translations
